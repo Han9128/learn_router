@@ -3,7 +3,8 @@ import Product from "./pages/Product";
 import {createBrowserRouter} from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from "./pages/Root";
-
+import ProductInfo from "./pages/ProductInfo";
+import Error from "./pages/Error";
 // import { BrowserRouter,Routes,Route } from "react-router";
 
 // ************* Routing using Data Method **************
@@ -12,10 +13,11 @@ const router = createBrowserRouter([
   {
     path:"/",
     element: <Root />,
-    errorElement: <h4>This is an error page</h4>,
+    errorElement: <Error />,
     children: [
       {path:"/home", element:<Home />},
-      {path:"/product", element:<Product />}
+      {path:"/product", element:<Product />},
+      {path:"/product/:id", element:<ProductInfo />}
     ]
   }
 
