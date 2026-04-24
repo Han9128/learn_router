@@ -5,6 +5,9 @@ import { RouterProvider } from "react-router/dom";
 import Root from "./pages/Root";
 import ProductInfo from "./pages/ProductInfo";
 import Error from "./pages/Error";
+import ToDos from "./pages/Todos";
+import NewProduct from "./pages/NewProduct";
+import { addProductAction } from "./pages/NewProduct";
 // import { BrowserRouter,Routes,Route } from "react-router";
 
 // ************* Routing using Data Method **************
@@ -17,7 +20,9 @@ const router = createBrowserRouter([
     children: [
       {path:"/home", element:<Home />},
       {path:"/product", element:<Product />},
-      {path:"/product/:id", element:<ProductInfo />}
+      {path:"/product/:id", element:<ProductInfo />},
+      {path:"/todos", element:<ToDos/>},
+      {path:"/new-product", element:<NewProduct/>, action: addProductAction}
     ]
   }
 
